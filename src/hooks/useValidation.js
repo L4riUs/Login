@@ -10,11 +10,11 @@ export default function UseValidations() {
     const validateEmail = (email) => {
         const re = /^[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*@[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{2,5}$/;
         if (re.test(email)) {
-            setText('Email is valid')
+            setText('Correo valido')
             setBorderStyle(input_success)
             return true
         } else {
-            setText('Email is invalid')
+            setText('Correo no valido')
             setBorderStyle(input_error)
             return false
         }
@@ -23,11 +23,11 @@ export default function UseValidations() {
     const validatePassword = (password) => {
         const re = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&])([A-Za-z\d$@$!%*?&]|[^ ]){8,15}$/;
         if (re.test(password)) {
-            setText('Password is valid')
+            setText('Contraseña valida')
             setBorderStyle(input_success)
             return true
         } else {
-            setText('Password is invalid')
+            setText('Contraseña no valida')
             setBorderStyle(input_error)
             return false
         }
