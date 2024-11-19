@@ -10,6 +10,7 @@ export default function styles() {
             justifyContent: 'center',
             alignItems: 'center',
             borderRadius: 10,
+            marginTop: 20
         },
         text: {
             color: 'white',
@@ -33,7 +34,7 @@ export default function styles() {
             margin: 10,
             padding: 10,
             borderRadius: 10,
-            width: 250,
+            width: 270,
         }
     })
     return styles

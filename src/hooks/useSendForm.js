@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import useValidation from "./useValidation"
-import json from '../../api';
 
 export default function UseForm (handleText, tipo, onChangeText){
   
@@ -30,14 +29,14 @@ export default function UseForm (handleText, tipo, onChangeText){
       }
     }
 
-    const submit = () => {
+    const submit =  async () => {
       if (verify()) {
-        //aqui iria el fetch pero aja
-        //suponiendo que el json es un archivo que contiene un objeto con el usuario y contraseña
-        //q seria lo q se traeria de la base de datos
-        //y se compara con el form
+
+        const response = await fetch("https://gist.githubusercontent.com/L4riUs/252acb2307018f81ff65e4421e9f87f8/raw/b5b188038e6f728d8b5cc41428724b359780d467/.json");
+        
+        const json = await response.json();
+        
         if(json.user === form.email && json.password === form.password){
-          //aqui se pondria un window.location.href = '/home' o algo asi
           alert('Sesion iniciada');
           setForm({email: '', password: ''});
         } else {

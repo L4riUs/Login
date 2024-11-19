@@ -10,10 +10,10 @@ export default function formComponent(){
   const {submit ,handleSubmit} = useForm()
 
   return (
-    <View style={{alignItems: 'center'}}>
-      <Text>INGRESAR</Text>
-        <Input tipo="email" onChangeText={(e)=>{handleSubmit("email", e)}}/>
-        <Input tipo="password" onChangeText={(e)=>{handleSubmit("password", e)}}/>
+    <View style={{alignItems: 'center', backgroundColor: "#dfdfdf", paddingHorizontal: 30, paddingVertical: 70, borderRadius: 20, opacity: 0.9}}>
+      <Text style={{fontSize: 30, fontWeight: "bold", marginBottom: 20}}>INGRESAR</Text>
+        <Input placeholder="Usuario" tipo="email" onChangeText={(e)=>{handleSubmit("email", e)}}/>
+        <Input placeholder="Contraseña" tipo="password" onChangeText={(e)=>{handleSubmit("password", e)}}/>
         <Button onPress={()=>{submit()}}/>
     </View>
   )

@@ -4,7 +4,7 @@ import UseForm from "../hooks/useSendForm"
 import Style from "../Styles/styles"
 
 
-export default function InputComponent({tipo, onChangeText}) {
+export default function InputComponent({tipo, onChangeText, placeholder}) {
     const {hide,inputCont} = Style()        
     const { text, borderStyle, handleText } = UseValidation();
     const { handleChangeText } = UseForm(handleText, tipo, onChangeText);
@@ -15,7 +15,7 @@ export default function InputComponent({tipo, onChangeText}) {
         <TextInput
           style={[borderStyle, inputCont]}
           onChangeText={handleChangeText}
-          placeholder={tipo}
+          placeholder={placeholder}
         />
         <Text style={[text !== "" ? "" : hide, {marginBottom: 15}]}>{text}</Text>
       </>
