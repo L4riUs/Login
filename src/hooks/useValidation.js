@@ -23,11 +23,11 @@ export default function UseValidations() {
     const validatePassword = (password) => {
         const re = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&])([A-Za-z\d$@$!%*?&]|[^ ]){8,15}$/;
         if (re.test(password)) {
-            setText('Contraseña valida')
+            setText('Formato de contraseña valido')
             setBorderStyle(input_success)
             return true
         } else {
-            setText('Contraseña no valida')
+            setText('Formato de contraseña no valido')
             setBorderStyle(input_error)
             return false
         }
